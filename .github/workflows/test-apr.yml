@@ -20,7 +20,7 @@ jobs:
           uses: peter-evans/create-pull-request@v6
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
-            branch: 'dev' # source branch for pr
+            branch: 'dev-auto-pr' # source branch for pr
             base: 'main' # target branch for pr
             commit-message: Update from Dev Environment
             title: 'Update from Dev Environment'

@@ -3,9 +3,10 @@ on:
   push:
     branches: dev
 
-# Job 5: Create PR to main branch
-create-PR-to-main: 
-    runs-on: ubuntu-latest
+jobs:
+    # Job 1: Create PR to main branch
+    create-PR-to-main: 
+        runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4

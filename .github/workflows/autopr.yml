@@ -4,23 +4,23 @@ on:
 jobs:
   create-PR-to-main: 
     runs-on: ubuntu-latest
-      permissions:
-        contents: write
-        pull-requests: write
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:  
-          ref: 'dev'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:  
+        ref: 'dev'
   
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'devdev-auto-pr-${{ github.run_number }}' # This creates a new branch for the PR
-          base: 'main' # The PR targets merging into main
-          commit-message: Update from Dev Environment
-          title: 'Update from Dev Environment'
-          body: Automatic pull request creation from Dev to Main after successful deployment.
-          labels: automated pr
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'devdev-auto-pr-${{ github.run_number }}' # This creates a new branch for the PR
+        base: 'main' # The PR targets merging into main
+        commit-message: Update from Dev Environment
+        title: 'Update from Dev Environment'
+        body: Automatic pull request creation from Dev to Main after successful deployment.
+        labels: automated pr
   

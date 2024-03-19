@@ -1,6 +1,9 @@
+on:
+  push:
+    branches: ['devdev']
 jobs:
-    create-PR-to-main: 
-      runs-on: ubuntu-latest
+  create-PR-to-main: 
+    runs-on: ubuntu-latest
       permissions:
         contents: write
         pull-requests: write

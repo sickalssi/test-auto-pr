@@ -18,8 +18,8 @@ jobs:
           uses: peter-evans/create-pull-request@v6
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
-            branch: main    
-            base: dev
+            branch: dev # source branch for pr
+            base: main # target branch for pr
             commit-message: Update from Dev Environment
             title: 'Update from Dev Environment'
             body: Automatic pull request creation from Dev to Main after successful deployment.

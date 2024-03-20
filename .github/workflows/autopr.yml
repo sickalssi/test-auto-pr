@@ -11,18 +11,18 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:  
-        ref: 'devdev'
+        ref: 'main'
     # - name: Reset promotion branch
     #   run: |
-    #     git fetch origin main:main
-    #     git reset --hard main
+    #     git fetch origin devdev:devdev
+    #     git reset --hard devdev
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
-        branch: 'devdev-promotion'
-        base: 'main'
-        commit-message: Update from Dev Environment
-        title: 'Update from Dev Environment'
+        branch: 'main-promotion'
+        # base: 'main'
+        commit-message: Update from DevDev Environment
+        title: 'Update from DevDev Environment'
         body: Automatic pull request from Dev to Main after successful deployment.
         labels: automated pr
   

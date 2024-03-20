@@ -19,8 +19,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
-        branch: 'main-promotion'
-        # base: 'main'
+        branch: 'devdev'
         commit-message: Update from DevDev Environment
         title: 'Update from DevDev Environment'
         body: Automatic pull request from Dev to Main after successful deployment.

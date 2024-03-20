@@ -16,9 +16,8 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: 'devdev-auto-pr-${{ github.run_number }}' # This creates a new branch for the PR
-        base: 'main' # The PR targets merging into main
+        # token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'devdev-promotion' # This creates a new branch for the PR
         commit-message: Update from Dev Environment
         title: 'Update from Dev Environment'
         body: Automatic pull request creation from Dev to Main after successful deployment.

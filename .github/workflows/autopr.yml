@@ -5,14 +5,17 @@ jobs:
   create-PR-to-main: 
     runs-on: ubuntu-latest
     steps:
+
     - name: Checkout
       uses: actions/checkout@v4
       with:  
-        ref: devdev
+        ref: 'devdev'
+
     - name: Reset promotion branch
         run: |
           git fetch origin main:main
           git reset --hard main
+          
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
@@ -20,6 +23,6 @@ jobs:
         branch: 'devdev-promotion' # This creates a new branch for the PR
         commit-message: Update from Dev Environment
         title: 'Update from Dev Environment'
-        body: Automatic pull request creation from Dev to Main after successful deployment.
+        body: Automatic pull request from Dev to Main after successful deployment.
         labels: automated pr
   
